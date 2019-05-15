@@ -8,7 +8,7 @@
     var infoDialog = null;
     var _converse = null;
 
-    converse.plugins.add("info", {
+    converse.plugins.add("publish", {
         'dependencies': [],
 
         'initialize': function () {
@@ -30,7 +30,7 @@
                 }
             });
 
-            console.log("info plugin is ready");
+            console.log("publish plugin is ready");
         },
 
         'overrides': {
@@ -42,7 +42,7 @@
                     var view = this;
                     var id = this.model.get("box_id");
 
-                    addToolbarItem(view, id, "pade-info-" + id, '<a class="fas fa-info-circle" title="Information"></a>');
+                    addToolbarItem(view, id, "pade-info-" + id, '<a class="fas fa-pen" title="Information"></a>');
 
                     setTimeout(function()
                     {
