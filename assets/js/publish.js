@@ -19,7 +19,7 @@
                     _converse.BootstrapModal.prototype.initialize.apply(this, arguments);
                 },
                 toHTML() {
-                  return '<div class="modal" id="myModal"> <div class="modal-dialog"> <div class="modal-content">' +
+                  return '<div class="modal" id="myModal" style="background-color:white;max-width:100%;overflow-y:scroll"> <div class="modal-dialog"> <div class="modal-content">' +
                          '<div class="modal-header">' +
                          '  <h4 class="modal-title">Information</h4>' +
                          '  <button type="button" class="close" data-dismiss="modal">&times;</button>' +
