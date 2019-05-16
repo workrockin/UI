@@ -21,10 +21,13 @@
                 toHTML() {
                   return '<div class="modal" id="myModal" style="background-color:white;max-width:100%;overflow-y:scroll"> <div class="modal-dialog"> <div class="modal-content">' +
                          '<div class="modal-header">' +
-                         '  <h4 class="modal-title">Information</h4>' +
+                         '  <p><a id ="new" href="#">NEW</a></p> &nbsp; | &nbsp;<p><a id ="archives" href="#">ARCHIVES</a></p>  ' +
                          '  <button type="button" class="close" data-dismiss="modal">&times;</button>' +
                          '</div>' +
-                         '<div class="modal-body"> Details.. </div>' +
+                         '<div class="modal-body">  ' +
+                         '<div id="archives"></div>'+
+                         '<div id="summernote"></div>' +
+                         '</div>' +
                          '<div class="modal-footer"> <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> </div>' +
                          '</div> </div> </div>';
                 }
@@ -42,7 +45,7 @@
                     var view = this;
                     var id = this.model.get("box_id");
 
-                    addToolbarItem(view, id, "pade-info-" + id, '<a class="fas fa-pen" title="Information"></a>');
+                    addToolbarItem(view, id, "pade-info-" + id, '<a class="fas fa-pen" title="Publish"></a>');
 
                     setTimeout(function()
                     {
@@ -53,6 +56,22 @@
                             evt.stopPropagation();
 
                             new infoDialog().show();
+                            //here we attach summernote and perform our custom logic. 
+                            // lets see if this works
+                            $('#summernote').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 100,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+      });
 
                         }, false);
                     });
